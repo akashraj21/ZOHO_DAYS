@@ -1,0 +1,30 @@
+#include<stdio.h>
+void Search_the_Element(int *arr){
+	int i,search,count=0;
+	for(i=0;arr[i]!='\0';i++){
+		count++;
+	}
+	printf("search a number between 1 to 100\n");
+	scanf("%d",&search);
+	for(i=0;arr[i]!='\0';i++){
+		if(arr[i]==search){
+			printf("Element found\n");
+			break;
+		}
+	}
+	if(i==count){
+		printf("Element Not found");
+	}
+}
+int main(){
+	int arr[10];
+	int n;
+	printf("Enter The Array Value\n");
+	scanf("%d",&n);
+	for(int i=0;i<n;i++){
+	    scanf("%d",&arr[i]);
+	}
+	void (*ptr)(int *);
+	ptr=Search_the_Element;
+	Search_the_Element(arr);
+}

@@ -1,0 +1,11 @@
+#include<stdio.h>
+void Copy_Name(char *Word){
+	char *CopyName=Word;
+	printf("%s",CopyName);
+}
+void main(){
+	char *Word[10];
+	scanf("%s",&Word);
+	void (*ptr)(char *)=Copy_Name;
+	ptr(Word);
+}

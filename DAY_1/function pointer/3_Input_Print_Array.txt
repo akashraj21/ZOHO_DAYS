@@ -1,0 +1,21 @@
+#include<stdio.h>
+void Print_Array(int *ars,int n){
+	int (*address),i;
+	address=ars;
+	for(i=0;i<n;i++){
+	    printf("\n");
+		printf("%d\n",*(address+i));
+	}
+}
+int main(){
+	int ars[100],n,i;	
+	void (*ptr)(int *,int);
+	printf("size of array\n");
+	scanf("%d",&n);
+	printf("enter the elements\n");
+	for(i=0;i<n;i++){
+		scanf("%d",&ars[i]);
+	}
+	ptr=Print_Array;
+	ptr(ars,n);
+}

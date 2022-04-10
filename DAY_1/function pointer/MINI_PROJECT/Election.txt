@@ -1,0 +1,55 @@
+#include<stdio.h>
+#define CANDIDATE_COUNT
+#define CD1 "ALPHA"
+#define CD2 "BETA"
+#define CD3 "CAMA"
+#define NONE "NOTA"
+int vcount1=0, vcount2=0, vcount3=0;
+void castvote(){
+   int choice;
+   printf("\n\n ### Please choose your Candidate ####\n\n");
+   printf("\n 1. %s", CD1);
+   printf("\n 2. %s", CD2);
+   printf("\n 3. %s", CD3);
+   printf("\n 4. %s", NONE);
+   printf("\nInput your choice (1 - 4) : ");
+   scanf("%d",&choice);
+   switch(choice){
+      case 1: vcount1++; break;
+      case 2: vcount2++; break;
+      case 3: vcount3++; break;
+      default: printf("\n Error: Wrong Choice !! Please retry");
+      getchar();
+   }
+}
+void votesCount(){
+   printf("\n\n ##### Voting Statics ####");
+   printf("\n %s - %d ", CD1, vcount1);
+   printf("\n %s - %d ", CD2, vcount2);
+   printf("\n %s - %d ", CD3, vcount3);
+}
+void Exit(){
+    printf("THANKS FOR YOUR VALUABLE VOTE");
+   
+}
+
+int main(){
+   int i;
+   int choice;
+   do{
+      printf("\n\n________Welcome to Election/Voting________");
+      printf("\n\n 1. Cast the Vote");
+      printf("\n 2. Find Vote Count");
+      printf("\n 0. Exit");
+      printf("\n Enter your choice : ");
+      scanf("%d", &choice);
+      switch(choice){
+         case 1: castvote();break;
+         case 2: votesCount();break;
+         case 0: Exit();break;
+         default: printf("\n Error: Invalid Choice");
+      }
+   }while(choice!=0);
+   getchar();
+   return 0;
+}

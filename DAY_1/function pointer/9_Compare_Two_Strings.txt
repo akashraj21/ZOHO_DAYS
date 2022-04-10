@@ -1,0 +1,27 @@
+#include<stdio.h>
+void concat(char *x,char *y){
+	int flag = 0;
+	
+	while (*x != '\0' || *y != '\0') {
+		if (*x == *y) {
+			x++;
+			y++;
+		}
+		else if ((*x == '\0' && *y != '\0')
+				|| (*x != '\0' && *y == '\0')
+				|| *x != *y) {
+			flag = 1;
+			printf("Unequal Strings\n");
+			break;
+		}
+	}
+	if (flag == 0) {
+		printf("Equal Strings\n");
+	}
+}
+int main(){
+	char First[5]="Alpha";
+	char Second[5]="alpha";
+	void (*ptr)(char *,char *)=concat;
+	ptr(First,Second);
+}

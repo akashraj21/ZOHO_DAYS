@@ -1,0 +1,26 @@
+#include <string.h>
+#include <stdio.h>
+void Rev(char str[], int i, int len);
+int main()
+{
+    char str[20];
+    int len = 0;
+    printf("Enter a string:\n");
+    scanf("%[^\n]s", str);
+    len = strlen(str);
+    Rev(str, 0, len - 1);
+    printf("Reversed string is:\n%s", str);
+    return 0;
+}
+void Rev(char str[], int i, int len)
+{
+    char t;
+    int j;
+    j = len - i;
+    t = str[i];
+    str[i] = str[j];
+    str[j] = t;
+    if (i == len / 2)
+        return;
+    Rev(str, i + 1, len);
+}

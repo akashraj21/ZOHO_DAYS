@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int findLength (char [], int);
+
+int main ()
+{
+
+	char str[100];
+
+	int len = 0;
+
+	printf ("Enter the string: \n");
+
+	scanf ("%[^\n]s", str);
+
+	len = findLength (str, 0);
+
+	printf ("The length of string: %d\n", len);
+
+	return 0;
+
+}
+
+int findLength (char str[], int Pos)
+{
+
+	static int i = 0;
+
+	if (str[Pos] == '\0')
+
+		return i;
+
+	else
+
+		i++;
+
+	findLength(str, Pos + 1);
+
+}

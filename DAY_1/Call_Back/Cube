@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<conio.h>
+
+void Num(void (*ptr)(int));
+void cube(int n);
+
+
+int main()
+{
+    
+    Num(cube);
+    return 0;
+}
+void Num(void (*ptr)(int))
+{
+    int val;
+    
+    printf("\n Enter N Number: ");
+    scanf("%d", &val);
+    
+    ptr(val);
+}
+void cube(int n)
+{
+    
+    for (int i = 1 ; i <= n; i++)
+    {
+        printf("\n Cube Of %d : %d", i, (i*i*i));
+    }
+    
+    
+}

@@ -1,0 +1,16 @@
+#include <stdio.h>
+int Sum(int n);
+int main()
+{
+   int num;
+   scanf("%d",&num);
+   printf("SUM OF Nth Number is :%d",Sum(num));
+}
+int Sum(int n){
+    if(n!=0){
+        return n+Sum(n-1);
+    }
+    else{
+       return n;
+    }
+}
