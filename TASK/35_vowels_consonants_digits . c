@@ -1,0 +1,33 @@
+/*C Program to read a text from the user and find vowels, consonants and digits and write them in different files(vowels.txt, consonants.txt, digits.txt).*/
+
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    char word[10];
+    printf("\n Enter a String: ");
+    scanf("%s",word);
+    
+    FILE *fv,*fc,*fd;
+    fv=fopen("vowels.txt","w");
+    fc=fopen("consonants.txt","w");
+    fd=fopen(" digits.txt","w");
+    int len=strlen(word);
+    for(int i=0;i<=len;i++){
+        if(isdigit(word[i]))
+        {
+            fputc(word[i],fd);
+        }
+        else if(word[i] == 'A' || word[i] == 'a' || word[i] == 'E' || word[i] == 'e' || word[i] == 'I' || word[i] == 'i' || word[i] == 'O' || word[i] == 'o' || word[i] == 'U' || word[i] == 'u'){
+            fputc(word[i],fv);
+        }
+        else{
+            fputc(word[i],fc);
+        }
+    }
+    fclose(fv);
+    fclose(fc);
+    fclose(fd);
+    
+    return 0;
+}
