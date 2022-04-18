@@ -12,7 +12,7 @@ typedef struct Emp_Detials{
 }Emp;
 
 int main(){
-    Emp emp[10];
+    Emp employe[10];
     int i;
     printf("Enter Employe Detials\n");
     for(i=1;i<=NO_EMP;i++){
